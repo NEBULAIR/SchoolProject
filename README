@@ -1,3 +1,51 @@
 A README to test Slack integration
 
 To open the schematics go use the software at http://fritzing.org
+
+[Software needed]
+
+[Hardware materials]
+Arduino Leonardo
+Leonardo
+http://www.amazon.fr/gp/product/B00ENSOHJ0?psc=1&redirect=true&ref_=ox_sc_act_title_2&smid=A1P3HNFSEHPC4K
+Cables
+BreadBoard Fem/Fem cables for connection
+http://www.amazon.fr/gp/product/B00ENSOHJ0?psc=1&redirect=true&ref_=ox_sc_act_title_2&smid=A1P3HNFSEHPC4K
+
+BreadBoard Male / Fem cables
+http://www.amazon.fr/gp/product/B00ENSOGWS?psc=1&redirect=true&ref_=ox_sc_act_title_1&smid=A1P3HNFSEHPC4K
+Relay board
+4 relay board, allow to power 2 pumps and 2 leds strip, good to be ready to activate anything
+http://www.amazon.fr/gp/product/B00AZEVSQG?psc=1&redirect=true&ref_=ox_sc_act_title_3&smid=A3BIDE681BQEK5
+
+For simple project 2 relay board can be enought
+Water sensor
+Simple switches activated like the toilet flush with a little floating foam.
+They can be setup by the top of the tank or with a hole on the side depending of the need.
+From the top is the easier way, from the side is more nice but may introduce leakinf issues.
+
+Basic White packege good for education
+http://www.amazon.fr/gp/product/B009DYP2H0?psc=1&redirect=true&ref_=ox_sc_act_title_1&smid=AGJ2TI2R2YFK8
+
+More nicer black package good for end product
+http://www.amazon.fr/gp/product/B00JQ1BJOU?psc=1&redirect=true&ref_=ox_sc_act_title_2&smid=A3I826466U8R8A
+
+Nicer metal package (luxe version)
+Top
+http://www.amazon.fr/gp/product/B00GT0KUAK/ref=pd_luc_rh_sbs_02_03_t_img_lh?ie=UTF8&psc=1
+Side
+http://www.amazon.fr/Interrupteur-Flotteur-Horizontal-Capteur-Liquide/dp/B00GT0KVGI/ref=pd_bxgy_60_img_2?ie=UTF8&refRID=08TCXDHDYCV1DBN0MTW3
+
+Ultra sound sensor
+For exact level mesuring for system improvment and more educational interest, Not needed for a first version
+http://www.amazon.fr/gp/product/B00BIZQWYE?dpID=41dsw83-RXL&dpSrc=sims&preST=_SL500_SR135%2C135_&refRID=50345E784KBQDMPTW3C2&ref_=pd_rhf_sc_s_cp_5
+12v pump
+2 pumps needed
+Light TBD
+5 meters strip grow lights LED (can be cut)
+
+Plastic buckets
+Plastic pipe for pumps
+Fishes
+Fish food
+Ph strips
