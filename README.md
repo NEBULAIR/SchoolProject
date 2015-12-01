@@ -45,19 +45,51 @@ All prices are including BTW
  * Possible source - [Amazon](http://www.amazon.de/gp/product/B00OIHLTME?psc=1&redirect=true&ref_=oh_aui_detailpage_o01_s00) - 7.59€ * 2 = 15.18€
  * A cheaper version - [Amazon](http://www.amazon.de/gp/product/B008OPKSC8?psc=1&redirect=true&ref_=oh_aui_detailpage_o00_s00) - 3.93€ * 2 = 7.86€
 
+* **5V Power source for arduino**
+ * A cable is needed to power the Arduino as well as program it. USB cables are perfect for this.
+ * Possible source - [Amazon](http://www.amazon.de/dp/B00KPX9FB2?psc=1) - 6.49€
+
+* **USB Charger**
+ * Used to plug the Arduino to a power outlet in the long run.
+ * Possible source - [Amazon](http://www.amazon.de/Stromadapter-Reiselader-Ladeger%C3%A4t-Reiseladeger%C3%A4t-Navigationsger%C3%A4t/dp/B00UHJA50O/ref=pd_sim_sbs_23_6?ie=UTF8&dpID=41GLJmSIGSL&dpSrc=sims&preST=_AC_UL160_SR160%2C160_&refRID=0CQKH2YM9DRPXWQKJ1RC) - 2.99€
+
+* **12V power source**
+ * Will be used to power the pumps as well as the LED strip
+ * Possible source - [Amazon](http://www.amazon.de/Branded-power-supply-2-1mm-Supply/dp/B0056SV18Q/ref=sr_1_2?s=ce-de&ie=UTF8&qid=1448984892&sr=1-2&keywords=12v+power) - 8.16€
+
+
 ### General purpose, Consumables
 
 On top of the purely electronic components, a number of additional elements are required to have a complete Aquaponics system runnning.
 
-Plastic buckets
-Plastic pipe for pumps
-Fishes
-Fish food
-Ph strips
-Cable for the Arduino
-cable as well for arduino
-Actual plants
-ceramic balls
+* **Tubing for the pumps**
+ * Some tubing is needed for the pumps to flow in the buckets. A couple meters should be enough. The tubing should have the same diameter as the pump.
+ * Possible source - [Amazon](http://www.amazon.de/Souked-50-Zoll--Aquarium-Luftschlauch-Luftpumpe/dp/B00SV4ALQ0/ref=sr_1_7?ie=UTF8&qid=1448987197&sr=8-7&keywords=aquarium+tubing ) - 4.38€
+
+* **Plastic buckets**
+ * Two plastic buckets are needed, one for the fish tank, and the other for the plants. The fish bucket should be bigger than the other one. 
+ * The plan bucket should preferably be dark/black, to avoid growth of parasites and mold.
+ * Possible source - [Ikea](http://www.ikea.com/nl/nl/catalog/products/30102974/) - 3.49€ * 2 = 6.98€
+
+
+* **Fish**
+ * For such a small system, a number of one to two fishes is advised. It is advised to take the cheapest, most resilient fish possible. Common Goldfish are usually a good choice to start with
+ * Possible source - Any pet store - 1.50€ * 2 = 3€
+
+* **Fish food**
+ * Possible source - Any pet store - 2€
+
+* **Ph/Nitrates strips**
+ * Will be used to check that the environment is under control, and that the nitrates are being delivered to the plants. 
+ * Possible source - Any pet store - 8€
+
+* **Ceramic balls**
+ * Will be used to lay the plants in, as well as allow for bacteria growth. Avoid soil! 
+ * Possible source - Gardening store - 4€
+
+* **Plants**
+ * Resistant plants are advised for a first system. Small trees and spices are usually good choices (Mint, Paprika, Thym, ...)
+ * Possible source - Gardening store - 8€
 
 ## Possible upgrades
 
@@ -72,11 +104,16 @@ Those elements are not required for the basic system, but can be used to improve
  * The Ultra Sound sensor can be used as a replacement for the water level sensor. It allows for a more precise control of the water level, and is also less subject for mechanical failures. 
  * Possible source - [Amazon](http://www.amazon.fr/gp/product/B00BIZQWYE?dpID=41dsw83-RXL&dpSrc=sims&preST=_SL500_SR135%2C135_&refRID=50345E784KBQDMPTW3C2&ref_=pd_rhf_sc_s_cp_5) - 1.46€
 
+* **pH Probe**
+ * For a more complete system, a pH probe can be used to measure pH constantly.
+ * Possible source - [Amazon](http://www.amazon.de/Gain-Express-PH-025RE_UK_FBA-Digital-pH-Meter-Monitor-Elektroden-Sonde/dp/B0111WRS7I/ref=sr_1_3?ie=UTF8&qid=1448987775&sr=8-3&keywords=ph+probe) - 40.51€  
+
 ## Total Prices
 
 This part simply aims at summarizing the numbers listed above to give an idea of the price of a simple system, as well as an upgraded system.
 
 Those prices do not include shipping costs, which will vary depending on the number of systems to build.
 
-* Simple system, no upgrade included : (per system)
-* Fully upgraded system : (per system)
+* Simple system, no upgrade included : 86€ (per system)
+* Upgraded system : 100€ (per system)
+* Fully upgraded system (including probe) : 145€ (per system)
