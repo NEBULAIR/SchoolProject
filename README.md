@@ -2,6 +2,8 @@
 
  This README describes all the steps needed to run the simple Aquaponics setup up and running for the School Project. This repository contains all the schematics and software needed to run everything, as well as a complete list of hardware resources needed with possible sources to provide them.
 
+![Image of current system](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/2015-07-28%2019.19.52%20HDR.jpg)
+
 
 # Software needed
 
@@ -117,3 +119,12 @@ Those prices do not include shipping costs, which will vary depending on the num
 * Simple system, no upgrade included : 86€ (per system)
 * Upgraded system : 100€ (per system)
 * Fully upgraded system (including probe) : 145€ (per system)
+
+# Existing system
+
+
+Some photos and videos about the current system. The system is slightly different, as it uses a Bell Siphon and overflow to drain water back to the fish pawn instead of pumping it. 
+
+
+![Video of current system](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/BellSiphon1.mp4)
+
