@@ -4,6 +4,10 @@
 
 ![Image of current system](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/2015-07-28%2019.19.52%20HDR.jpg)
 
+## Schematics overview
+
+![Image of the Fritzing schematics](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/Schematics1.png)
+
 
 # Software needed
 
