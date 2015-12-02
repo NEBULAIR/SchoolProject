@@ -125,6 +125,14 @@ Those prices do not include shipping costs, which will vary depending on the num
 
 Some photos and videos about the current system. The system is slightly different, as it uses a Bell Siphon and overflow to drain water back to the fish pawn instead of pumping it. 
 
+## Short video of the principle
+[![Short video of the first system](http://img.youtube.com/vi/gHlj5Vq7Mjk/0.jpg)](https://youtu.be/gHlj5Vq7Mjk)
 
-![Video of current system](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/BellSiphon1.mp4)
+## Some images of the system, day and night cycles
 
+### First generation Arduino circuit
+![Image of the first generation Arduino circuit](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/2015-11-20%2016.34.16.jpg)
+
+### System during day and night
+![System during day](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/2015-11-01%2020.30.21.jpg)
+![System during night](https://dl.dropboxusercontent.com/u/4286043/NEBULAIR/SchoolProject/2015-10-26%2021.31.42.jpg)
