@@ -3,6 +3,8 @@
  *  
  *  TODO Switch action reset hours to 9
  *  TODO Safety extra sensor
+ *  
+ *  Need to setup TimerOne from the librairie
  */
 
 #include <TimerOne.h>
@@ -15,7 +17,7 @@
 #define PUMP_IN       2     // Pin of the pump 1
 #define PUMP_OUT      3    // Pin of the pump 2
 #define LAMP          4     // Pin of the lamp relay
-#define FOG           5     // Pin of the lamp relay
+#define FOG           5     // Pin of the fog relay
 // -Sensors
 #define WATER_UP      9     // Pin of the water sensor 1
 #define WATER_DOWN    8     // Pin of the water sensor 2
@@ -34,7 +36,7 @@ volatile int secondsCounter;  // 0 to 59
 volatile int minutesCounter;  // 0 to 59
 
 bool ledState = 0;            // led status memory
-bool waterLevelState = 0;     // water level status memory 
+char waterLevelState = 0;     // water level status memory 
 #define DOWN      0
 #define FILLING   1
 #define UP        3
