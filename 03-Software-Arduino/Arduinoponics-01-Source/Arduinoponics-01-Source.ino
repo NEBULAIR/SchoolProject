@@ -11,11 +11,14 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+//Serial Config
+#define BAUDRATE 115200  // Serial link speed
+
 // Pin definitions
 #define LED           13    // For Leonardo built in led
 // -Relays
 #define PUMP_IN       2     // Pin of the pump 1
-#define PUMP_OUT      3    // Pin of the pump 2
+#define PUMP_OUT      3     // Pin of the pump 2
 #define LAMP          4     // Pin of the lamp relay
 #define FOG           5     // Pin of the fog relay
 // -Sensors
@@ -25,8 +28,8 @@
 // Time definition
 #define DAY_TIME      14    // Number of hours of daylight (LAMP ON)
 #define DAY_START     9     // Hour of the day that the day starts
-#define PUMP_CYCLE    15    // Time between 2 pump cycles
-#define WATER_UP_TIME 5     // Time to water at high level
+#define PUMP_FREQ     20    // Time between 2 pump cycles
+#define WATER_UP_TIME 10    // Time to water at high level
 
 #define SIMULATION true //Boolean to activate the simulation (reduce time 1mn = 1s)
 
@@ -43,6 +46,9 @@ char waterLevelState = 0;     // water level status memory
 #define CLEARING  4
 
 
+void printInfo(void);
+
+
 /* void setup(void) 
  *  Setup software run only once
  *  Allows to setup all the software and hardware
@@ -51,9 +57,12 @@ void setup(void)
 {
   // Setup the pin function TODO select good pin
   pinMode(LAMP, OUTPUT);
+  digitalWrite(LAMP, LOW);    //Turn ON at startup
   pinMode(LED, OUTPUT);
   pinMode(PUMP_IN, OUTPUT);
+  digitalWrite(PUMP_IN, HIGH);    //Turn off at startup
   pinMode(PUMP_OUT, OUTPUT);
+  digitalWrite(PUMP_OUT, HIGH);   //Turn off at startup
   pinMode(WATER_UP, INPUT);
   digitalWrite(WATER_UP, HIGH);   //Setup pull up
   pinMode(WATER_DOWN, INPUT);
@@ -66,7 +75,13 @@ void setup(void)
   hoursCounter = DAY_START;      // Init the time to DAY_START at startup
   minutesCounter = 1;
   secondsCounter = 1;
-  digitalWrite(LAMP, HIGH);
+  
+  //Start Serial
+  Serial.begin(BAUDRATE);
+  Serial.println("");
+  Serial.println("--------------------------");
+  Serial.println("    ESP8266 Full Test     ");
+  Serial.println("--------------------------");
 }
 
 
@@ -79,28 +94,34 @@ void loop(void)
   switch (waterLevelState) {
     
     case DOWN:
-        //Wait for pump cycle time to activate pump
-        if(0 == (minutesCounter % PUMP_CYCLE))
+        //Wait for pump frequence time to activate pump
+        if(0 == (minutesCounter % PUMP_FREQ))
         {
-          digitalWrite(PUMP_IN, 1);   // Turn ON the filling pump
+          digitalWrite(PUMP_IN,  0);   // Turn ON the filling pump
+          digitalWrite(PUMP_OUT, 1);   // Turn OFF the clearing pump
+          Serial.println("Turn ON the filling pump");
           waterLevelState = FILLING;
         }
       break;
       
     case FILLING:
        // wait for water up sensor to be activated
-       if(0 == digitalRead(WATER_UP))
+       if(1 == digitalRead(WATER_UP))
         {
-          digitalWrite(PUMP_IN, 0); // Turn OFF the filling pump
+          digitalWrite(PUMP_IN,  1); // Turn OFF the filling pump
+          digitalWrite(PUMP_OUT, 1); // Turn OFF the clearing pump
+          Serial.println("Turn OFF the filling pump");
           waterLevelState = UP;
         }
       break;
       
     case UP:
         //Wait for level up time passed to clear 
-        if(0 == ((minutesCounter % PUMP_CYCLE) % WATER_UP_TIME))
+        if(0 == ((minutesCounter % PUMP_FREQ) % WATER_UP_TIME))
         {
-          digitalWrite(PUMP_OUT, 1);   // Turn ON the clearing pump
+          digitalWrite(PUMP_IN,  1);   // Turn OFF the filling pump
+          digitalWrite(PUMP_OUT, 0);   // Turn ON the clearing pump
+          Serial.println("Turn ON the clearing pump");
           waterLevelState = CLEARING;
         }
       break;
@@ -110,7 +131,9 @@ void loop(void)
         // wait for water down sensor to be activated
         if(0 == digitalRead(WATER_DOWN))
         {
-          digitalWrite(PUMP_OUT, 0); // Turn OFF the clearing pump
+          digitalWrite(PUMP_IN,  1); // Turn OFF the filling pump
+          digitalWrite(PUMP_OUT, 1); // Turn OFF the clearing pump
+          Serial.println("Turn OFF the clearing pump");
           waterLevelState = DOWN;
         }
       break;
@@ -135,6 +158,7 @@ void seconds_timer(void)
   if (SIMULATION)
   {
     minutesCounter ++;      // Increment the minutes counter
+    printInfo();
   }
   else
   {// In case of normal use, increment seconds
@@ -146,6 +170,7 @@ void seconds_timer(void)
   {
     minutesCounter ++;      //Increment the minutes counter
     secondsCounter = 0;     // Clear the seconds counter
+    printInfo();
   }
 
   // Every  60min increment the hours counter
@@ -173,10 +198,16 @@ void hours_action(void)
 {
   //Check if something has to be done
   if (DAY_START == hoursCounter)
-    digitalWrite(LAMP, 1);
+  {
+    digitalWrite(LAMP, 0);
+    Serial.println("Start lamp");
+  }
 
   if ((DAY_START + DAY_TIME) == hoursCounter)
-    digitalWrite(LAMP, 0);
+  {
+    digitalWrite(LAMP, 1);
+    Serial.println("Stop lamp");
+  }
 }
 
 void toggle_led(void)
@@ -185,3 +216,30 @@ void toggle_led(void)
     digitalWrite(LED, ledState);
 }
 
+/* void printInfo(void)
+ *  Print all application info on the serial link 
+ *  
+ *  Input  : 
+ *  Output :
+*/
+void printInfo(void)
+{
+    Serial.print("----->>>>>> Time : ");
+    Serial.print(hoursCounter);
+    Serial.print(":");
+    Serial.println(minutesCounter);
+    
+    Serial.print("Water level : ");
+    Serial.print(waterLevelState);
+    Serial.print(" PI[");
+    Serial.print(digitalRead(PUMP_IN));
+    Serial.print("] PO[");
+    Serial.print(digitalRead(PUMP_OUT));
+    Serial.print("] L[");
+    Serial.print(digitalRead(LAMP));
+    Serial.print("] U[");
+    Serial.print(digitalRead(WATER_UP));
+    Serial.print("] D[");
+    Serial.print(digitalRead(WATER_DOWN));
+    Serial.println("]");
+}
